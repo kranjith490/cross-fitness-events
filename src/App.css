@@ -1,0 +1,56 @@
+.word-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 2rem;
+  font-weight: bold;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Each word is animated */
+.word {
+  position: absolute;
+  opacity: 0;
+  transform: translateX(-100%); /* Start completely to the left */
+  animation: moveIn 3s ease-in-out forwards;
+}
+
+/* First word appears at 0s */
+.word:nth-child(1) {
+  animation-delay: 0s;
+}
+
+/* Second word appears after 3s */
+.word:nth-child(2) {
+  animation-delay: 3s;
+}
+
+/* Third word appears after 6s */
+.word:nth-child(3) {
+  animation-delay: 6s;
+}
+
+/* Animation for the text movement */
+@keyframes moveIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(0); /* Word slides into place */
+  }
+  100% {
+    opacity: 0; /* Fade out for the next word */
+  }
+}
+
+.carousel .control-dots .dot.selected, .carousel .control-dots .dot:hover {
+  background: black !important;
+}
+
+.carousel .control-dots .dot{
+  background-color: #5c5a5a !important;
+}
