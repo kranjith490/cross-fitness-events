@@ -15,7 +15,8 @@ const UpcomingEvents = () => {
       backgroundColor: '#fff',
       color: '#000',
       padding: '20px',
-      fontFamily: "'Arial', sans-serif"
+      fontFamily: "'Arial', sans-serif",
+      marginTop: '50px'
     },
     heading: {
       fontSize: '24px',
@@ -49,7 +50,7 @@ const UpcomingEvents = () => {
   };
 
   const upcomingEvents = [
-    {
+    /*  {
       title: 'CrossFit Masterclass',
       date: 'February 5, 2025',
       time: '5:00 PM',
@@ -75,35 +76,41 @@ const UpcomingEvents = () => {
       venue: 'Elliot’s Beach, Chennai',
       description:
         'Start your day with peace and tranquility through our sunrise yoga session.'
-    }
+    } */
   ];
 
   return (
     <div id="events-section" style={styles.container}>
       <h2 style={styles.heading}>Upcoming Events</h2>
       <div style={styles.eventCardContainer}>
-        {upcomingEvents.map((event, index) => (
-          <div key={index} style={styles.eventCard}>
-            <h4 style={{ marginBottom: '10px', fontWeight: 'bold' }}>
-              {event.title}
-            </h4>
-            <p style={styles.eventDetails}>
-              <span style={styles.label}>Date:</span> {event.date}
-            </p>
-            <p style={styles.eventDetails}>
-              <span style={styles.label}>Time:</span> {event.time}
-            </p>
-            <p style={styles.eventDetails}>
-              <span style={styles.label}>Coordinator:</span> {event.coordinator}
-            </p>
-            <p style={styles.eventDetails}>
-              <span style={styles.label}>Venue:</span> {event.venue}
-            </p>
-            <p style={styles.eventDetails}>
-              <span style={styles.label}>Description:</span> {event.description}
-            </p>
-          </div>
-        ))}
+        {upcomingEvents.length > 0 &&
+          upcomingEvents.map((event, index) => (
+            <div key={index} style={styles.eventCard}>
+              <h4 style={{ marginBottom: '10px', fontWeight: 'bold' }}>
+                {event.title}
+              </h4>
+              <p style={styles.eventDetails}>
+                <span style={styles.label}>Date:</span> {event.date}
+              </p>
+              <p style={styles.eventDetails}>
+                <span style={styles.label}>Time:</span> {event.time}
+              </p>
+              <p style={styles.eventDetails}>
+                <span style={styles.label}>Coordinator:</span>{' '}
+                {event.coordinator}
+              </p>
+              <p style={styles.eventDetails}>
+                <span style={styles.label}>Venue:</span> {event.venue}
+              </p>
+              <p style={styles.eventDetails}>
+                <span style={styles.label}>Description:</span>{' '}
+                {event.description}
+              </p>
+            </div>
+          ))}
+        {upcomingEvents && upcomingEvents.length === 0 && (
+          <p>Get ready to hit the pavement - Events coming soon...</p>
+        )}
       </div>
     </div>
   );
