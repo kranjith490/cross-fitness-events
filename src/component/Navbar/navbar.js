@@ -1,28 +1,32 @@
 import { useState } from 'react';
-import { Box, IconButton } from '@mui/material';
+import { Box } from '@mui/material';
 import logo from '../../Assets/images/beatcrossfit_logo.png';
-import MenuOpenIcon from '@mui/icons-material/MenuOpen';
-import MenuDrawer from '../MenuDrawer/MenuDrawer';
+/* import MenuOpenIcon from '@mui/icons-material/MenuOpen';
+import MenuDrawer from '../MenuDrawer/MenuDrawer'; */
+import { useNavigate } from 'react-router-dom';
 
-const navOptions = [];
+const navOptions = ['Home'];
 
 const Navbar = () => {
   const [selectedTab, setSelectedTab] = useState(0);
 
-  const [openDrawer, setOpenDrawer] = useState(false);
+  const navigate = useNavigate();
 
-  const toggleDrawer = () => {
+  //const [openDrawer, setOpenDrawer] = useState(false);
+
+  /*  const toggleDrawer = () => {
     setOpenDrawer(!openDrawer);
-  };
+  }; */
 
   const handleNavgation = (index) => {
     setSelectedTab(index);
+    if (index === 0) navigate('/');
   };
 
-  const handleMenuClick = (index) => {
+  /* const handleMenuClick = (index) => {
     handleNavgation(index);
     setOpenDrawer(!openDrawer);
-  };
+  }; */
 
   return (
     <div
@@ -56,35 +60,13 @@ const Navbar = () => {
           zIndex: '100'
         }}
       >
-        <Box
-          sx={{
-            /* display: { xs: 'block', sm: 'block', md: 'none', lg: 'none' }, */
-            marginRight: '15px', // Show only on mobile and small tabs
-            display: 'none'
-          }}
-        >
-          <IconButton
-            style={{ color: 'white' }}
-            onClick={() => {
-              toggleDrawer();
-            }}
-          >
-            <MenuOpenIcon />{' '}
-          </IconButton>
-          <MenuDrawer
-            navOptions={navOptions}
-            openDrawer={openDrawer}
-            toggleDrawer={toggleDrawer}
-            handleMenuClick={handleMenuClick}
-          />
-        </Box>
         {navOptions.map((option, index) => {
           return (
             <Box
               key={`nav-option-${index}`}
               sx={{
-                marginRight: '20px',
-                display: { xs: 'none', sm: 'none', md: 'block', lg: 'block' },
+                marginRight: '30px',
+                display: { xs: 'block', sm: 'block', md: 'block', lg: 'block' },
                 /* display: 'block',
                 '@media (max-width: 600px)': {
                   display: 'none' // Hide on mobile screens
