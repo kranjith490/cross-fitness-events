@@ -8,28 +8,7 @@ const events = [
   {
     id: 1,
     title: 'BEAT Cyclothon',
-    date: 'March 15, 2023',
-    image: eventPic1,
-    eventName: 'BEATCyclothon'
-  },
-  {
-    id: 1,
-    title: 'BEAT Cyclothon',
-    date: 'March 15, 2023',
-    image: eventPic1,
-    eventName: 'BEATCyclothon'
-  },
-  {
-    id: 1,
-    title: 'BEAT Cyclothon',
-    date: 'March 15, 2023',
-    image: eventPic1,
-    eventName: 'BEATCyclothon'
-  },
-  {
-    id: 1,
-    title: 'BEAT Cyclothon',
-    date: 'March 15, 2023',
+    date: 'January 2019',
     image: eventPic1,
     eventName: 'BEATCyclothon'
   }
