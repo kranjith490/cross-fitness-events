@@ -3,14 +3,16 @@ import { Box } from '@mui/material';
 import logo from '../../Assets/images/beatcrossfit_logo.png';
 /* import MenuOpenIcon from '@mui/icons-material/MenuOpen';
 import MenuDrawer from '../MenuDrawer/MenuDrawer'; */
-import { useNavigate } from 'react-router-dom';
-
-const navOptions = ['Home'];
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
   const [selectedTab, setSelectedTab] = useState(0);
 
   const navigate = useNavigate();
+
+  const { pathname = '' } = useLocation();
+
+  const navOptions = pathname.includes('events') ? ['Home'] : [];
 
   //const [openDrawer, setOpenDrawer] = useState(false);
 

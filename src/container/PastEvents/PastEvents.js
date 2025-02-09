@@ -45,8 +45,7 @@ const styles = {
   container: {
     padding: '20px 0',
     textAlign: 'center',
-    backgroundColor: '#f9f9f9',
-    marginTop: '50px'
+    backgroundColor: '#f9f9f9'
   },
   header: { marginBottom: '30px', fontSize: '2rem', fontWeight: 'bold' },
   card: {
