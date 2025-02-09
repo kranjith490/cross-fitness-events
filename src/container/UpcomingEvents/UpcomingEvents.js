@@ -7,12 +7,13 @@ import {
   Container,
   Typography
 } from '@mui/material';
-
 import Marathon_2025 from '../../Assets/Events/Upcoming/Marathon_2025/Marathon_2025.jpg';
 
 const upcomingEvents = [
   {
-    banner: Marathon_2025 // Your optimized horizontal poster
+    banner: Marathon_2025,
+    enabled: false,
+    buttonText: 'Register Opening Soon...'
   }
 ];
 
@@ -36,7 +37,8 @@ const UpcomingEvents = () => {
                 boxShadow: 3,
                 overflow: 'hidden',
                 transition: '0.3s',
-                '&:hover': { boxShadow: 8 }
+                '&:hover': { boxShadow: event.enabled ? 8 : 3 }, // No hover effect if disabled
+                opacity: event.enabled ? 1 : 0.6 // Light fade for disabled events
               }}
             >
               {/* Event Poster */}
@@ -44,27 +46,33 @@ const UpcomingEvents = () => {
                 component="img"
                 image={event.banner}
                 alt="Event Poster"
-                sx={{ width: '100%', height: '450px', objectFit: 'cover' }}
+                sx={{ width: '100%', height: 'auto', objectFit: 'cover' }}
               />
 
               {/* Register Now Button */}
               <Button
                 fullWidth
                 variant="contained"
+                disabled={!event.enabled}
                 sx={{
                   mt: -1,
                   p: 2,
                   fontSize: '1rem',
                   fontWeight: 'bold',
-                  background: 'linear-gradient(45deg, #ff4081, #ff79b0)',
+                  background: event.enabled
+                    ? 'linear-gradient(45deg, #ff4081, #ff79b0)'
+                    : '#ccc',
+                  color: event.enabled ? '#fff' : '#888',
                   transition: '0.3s',
-                  '&:hover': {
-                    background: 'linear-gradient(45deg, #ff79b0, #ff4081)',
-                    transform: 'scale(1.05)'
-                  }
+                  '&:hover': event.enabled
+                    ? {
+                        background: 'linear-gradient(45deg, #ff79b0, #ff4081)',
+                        transform: 'scale(1.05)'
+                      }
+                    : {}
                 }}
               >
-                Register Now
+                {event?.buttonText ?? ''}
               </Button>
             </Card>
           </Grid>
