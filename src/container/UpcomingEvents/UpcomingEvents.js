@@ -12,8 +12,8 @@ import Marathon_2025 from '../../Assets/Events/Upcoming/Marathon_2025/Marathon_2
 const upcomingEvents = [
   {
     banner: Marathon_2025,
-    enabled: false,
-    buttonText: 'Register Opening Soon...'
+    enabled: true,
+    buttonText: 'Register Now'
   }
 ];
 
