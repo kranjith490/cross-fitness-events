@@ -25,6 +25,11 @@ const Navbar = () => {
     if (index === 0) navigate('/');
   };
 
+  const handleLogoClick = () => {
+    const url = 'https://beatcrossfit.com/'; // Replace with your URL
+    window.location.href = url;
+  };
+
   /* const handleMenuClick = (index) => {
     handleNavgation(index);
     setOpenDrawer(!openDrawer);
@@ -48,7 +53,11 @@ const Navbar = () => {
         style={{
           display: 'flex',
           alignItems: 'center',
-          justifyContent: 'center'
+          justifyContent: 'center',
+          cursor: 'pointer'
+        }}
+        onClick={() => {
+          handleLogoClick();
         }}
       >
         <img width={'135px'} src={logo} alt="cross fit logo" />

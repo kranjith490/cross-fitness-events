@@ -13,7 +13,7 @@ const upcomingEvents = [
   {
     banner: Marathon_2025,
     enabled: true,
-    buttonText: 'Register Now'
+    buttonText: 'Registration opening soon'
   }
 ];
 

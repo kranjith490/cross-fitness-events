@@ -2,14 +2,14 @@ import React from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { useNavigate } from 'react-router-dom';
-import eventPic1 from '../../Assets/Events/BEATCyclothon/pic1.jpg';
+import eventPic12 from '../../Assets/Events/BEATCyclothon/pic12.jpg';
 
 const events = [
   {
     id: 1,
     title: 'BEAT Cyclothon',
     date: 'January 2019',
-    image: eventPic1,
+    image: eventPic12,
     eventName: 'BEATCyclothon'
   }
 ];
@@ -54,7 +54,8 @@ const styles = {
     alignItems: 'center',
     textDecoration: 'none',
     color: '#fff',
-    position: 'relative'
+    position: 'relative',
+    cursor: 'pointer'
   },
   imageContainer: {
     width: '100%',
@@ -97,7 +98,7 @@ const PastEvents = () => {
 
   return (
     <div style={styles.container}>
-      <h1 style={styles.header}>Past Events</h1>
+      <h1 style={styles.header}>Gallery</h1>
       <Carousel
         showThumbs={false}
         infiniteLoop
