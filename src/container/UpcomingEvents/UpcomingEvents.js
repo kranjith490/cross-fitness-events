@@ -7,19 +7,19 @@ import {
   Container,
   Typography
 } from '@mui/material';
-import Marathon_2025 from '../../Assets/Events/Upcoming/Marathon_2025/Marathon_2025.jpg';
+//import Marathon_2025 from '../../Assets/Events/Upcoming/Marathon_2025/Marathon_2025.jpg';
 
 const upcomingEvents = [
-  {
-    banner: Marathon_2025,
-    enabled: true,
-    buttonText: 'Registration opening soon'
-  }
+  // {
+  //   banner: Marathon_2025,
+  //   enabled: true,
+  //   buttonText: 'Registration opening soon'
+  // }
 ];
 
 const UpcomingEvents = () => {
   return (
-    <Container sx={{ py: 5 }}>
+    <Container sx={{ py: 5, marginTop: '15px' }}>
       <Typography
         variant="h4"
         gutterBottom
