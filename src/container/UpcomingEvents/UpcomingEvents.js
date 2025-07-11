@@ -7,14 +7,15 @@ import {
   Container,
   Typography
 } from '@mui/material';
-//import Marathon_2025 from '../../Assets/Events/Upcoming/Marathon_2025/Marathon_2025.jpg';
+import Marathon_2025 from '../../Assets/Events/Upcoming/Marathon_2025/JullyEvent2025.jpg';
 
 const upcomingEvents = [
-  // {
-  //   banner: Marathon_2025,
-  //   enabled: true,
-  //   buttonText: 'Registration opening soon'
-  // }
+  {
+    banner: Marathon_2025,
+    enabled: true,
+    buttonText: 'Register now',
+    redirectionLink: 'https://www.theticket9.com/event/beat-the-sweet-marathon'
+  }
 ];
 
 const UpcomingEvents = () => {
@@ -25,10 +26,11 @@ const UpcomingEvents = () => {
         gutterBottom
         textAlign="center"
         fontWeight="bold"
+        sx={{ marginTop: '20px' }}
       >
         Upcoming Events
       </Typography>
-      <Grid container spacing={3}>
+      <Grid container spacing={3} justifyContent="center">
         {upcomingEvents.map((event, index) => (
           <Grid item xs={12} sm={6} md={4} key={index}>
             <Card
@@ -54,6 +56,11 @@ const UpcomingEvents = () => {
                 fullWidth
                 variant="contained"
                 disabled={!event.enabled}
+                onClick={() => {
+                  if (event.enabled) {
+                    window.open(event.redirectionLink, '_blank');
+                  }
+                }}
                 sx={{
                   mt: -1,
                   p: 2,
